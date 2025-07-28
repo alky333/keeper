@@ -1,0 +1,233 @@
+/* Importar una fuente monoespaciada para el look "hacker" */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* --- Configuración General y Fondo --- */
+body {
+    background-color: #1a021a; /* Morado muy oscuro */
+    color: #e0e0e0; /* Un gris claro para el texto general */
+    font-family: 'Share Tech Mono', monospace;
+    /* Añadimos espacio al final para que el contenido no quede oculto por el footer fijo */
+    padding-bottom: 60px;
+}
+
+/* El canvas para la animación Matrix */
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás de todo el contenido */
+}
+
+/* --- Barra de Navegación --- */
+.navbar {
+    background-color: rgba(10, 0, 15, 0.6) !important; /* Fondo semitransparente */
+    backdrop-filter: blur(8px); /* Efecto cristal esmerilado */
+    border-bottom: 1px solid rgba(0, 255, 80, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 80, 0.2);
+}
+
+.navbar-brand, .nav-link {
+    color: #00ff50 !important; /* Verde neón para los enlaces */
+    text-shadow: 0 0 5px #00ff50;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    text-shadow: 0 0 10px #00ff50, 0 0 15px #00ff50;
+}
+
+/* --- Contenedor Principal --- */
+main.container {
+    background-color: rgba(20, 0, 25, 0.7); /* Transparencia más pronunciada */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 80, 0.5);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 255, 80, 0.15);
+}
+
+/* --- Títulos y Texto --- */
+h1 {
+    color: #c77dff;
+    text-shadow: 0 0 8px rgba(199, 125, 255, 0.7);
+    border-bottom: 2px solid rgba(174, 71, 255, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem !important;
+}
+
+a {
+    color: #00ff50;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #99ffbb;
+    text-decoration: underline;
+}
+
+/* --- Formularios --- */
+.form-label {
+    color: #00ff50;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ae47ff;
+    color: #e0e0e0;
+    border-radius: 0; /* Bordes afilados */
+}
+
+.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: #c77dff;
+    box-shadow: 0 0 10px rgba(174, 71, 255, 0.5);
+    color: #fff;
+}
+
+/* --- Botones --- */
+.btn-primary {
+    background-color: transparent;
+    border: 2px solid #00ff50;
+    color: #00ff50;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00ff50;
+    color: #1a021a;
+    box-shadow: 0 0 15px #00ff50;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #888;
+    color: #888;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #888;
+    color: #1a021a;
+}
+
+.btn-info {
+    background-color: transparent;
+    border: 2px solid #0dcaf0;
+    color: #0dcaf0;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #0dcaf0;
+    color: #1a021a;
+    box-shadow: 0 0 15px #0dcaf0;
+}
+
+.btn-danger {
+    background-color: transparent;
+    border: 2px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #ff4d4d;
+    color: #1a021a;
+    box-shadow: 0 0 15px #ff4d4d;
+}
+
+/* --- Notificaciones Flotantes --- */
+.notification-container {
+    position: fixed;
+    top: 80px; /* Un poco más abajo de la barra de navegación */
+    right: 20px;
+    z-index: 1056; /* Por encima de los modales de bootstrap (1055) */
+    width: 350px;
+}
+
+.notification-container .alert {
+    box-shadow: 0 0 15px rgba(0, 255, 80, 0.3);
+}
+
+/* --- Alertas --- */
+.alert {
+    border-radius: 0;
+    border-width: 2px;
+    background-color: rgba(10, 0, 15, 0.8);
+    backdrop-filter: blur(5px);
+    /* Hacemos el texto blanco y le añadimos un brillo para mejorar la legibilidad */
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Modales --- */
+.modal-content {
+    background-color: rgba(20, 0, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid #00ff50;
+    border-radius: 0;
+    color: #e0e0e0;
+}
+.modal-content.modal-danger {
+    border-color: #ff4d4d;
+}
+.modal-content.modal-danger .modal-header,
+.modal-content.modal-danger .modal-footer {
+    border-color: rgba(255, 77, 77, 0.5);
+}
+.modal-header {
+    border-bottom: 1px solid rgba(0, 255, 80, 0.5);
+}
+.modal-footer {
+    border-top: 1px solid rgba(0, 255, 80, 0.5);
+}
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- Barra de Confirmación en Footer --- */
+.footer-confirmation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 0, 15, 0.9);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid #ff4d4d;
+    padding: 1rem 0;
+    z-index: 1050;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 -5px 20px rgba(255, 77, 77, 0.2);
+}
+
+.footer-confirmation.show {
+    transform: translateY(0);
+}
+
+/* --- Footer Fijo de la Aplicación --- */
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 0, 15, 0.8);
+    padding: 0.5rem 0;
+    z-index: 1020; /* Debajo de la barra de confirmación (1050) */
+    font-size: 0.8rem;
+    color: #aaa;
+    border-top: 1px solid rgba(0, 255, 80, 0.2);
+    backdrop-filter: blur(5px);
+}
